@@ -8,7 +8,12 @@
 
   function LoginModel() {
 
-    var model = {};
+    var model = {
+      form: {
+        username: '',
+        password: '1122334455'
+      }
+    };
 
     return model;
   }
