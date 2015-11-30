@@ -8,7 +8,14 @@
 
   function PostDetailModel() {
 
-    var model = {};
+    var model = {
+      form: {
+        content: ''
+      },
+      post: {
+
+      }
+    };
 
     return model;
   }
