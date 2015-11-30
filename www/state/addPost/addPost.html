@@ -3,15 +3,22 @@
         <form class="list">
             <label class="item item-input">
                 <span class="input-label">제목</span>
-                <input type="text" placeholder="">
+                <input type="text"
+                  ng-model="AddPost.Model.form.title"
+                >
             </label>
         </form>
         <form class="list">
             <label class="item item-input">
-                <span class="input-label">내용</span><textarea placeholder=""> </textarea>
+                <span class="input-label">내용</span>
+                <textarea
+                  ng-model="AddPost.Model.form.content"
+                > </textarea>
             </label>
         </form>
-        <a menu-close="" href="#/postList" class="button button-positive button-block ">글쓰기</a>
+        <a class="button button-positive button-block"
+          ng-click="AddPost.createPost();"
+        >글쓰기</a>
         <form class="list"></form>
     </ion-content>
 </ion-view>

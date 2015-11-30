@@ -8,7 +8,12 @@
 
   function AddPostModel() {
 
-    var model = {};
+    var model = {
+      form: {
+        title: '',
+        content: ''
+      }
+    };
 
     return model;
   }
