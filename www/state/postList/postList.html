@@ -1,13 +1,29 @@
 <ion-view title="글목록">
     <ion-content padding="'true'" class="has-header">
+      <ion-refresher
+        on-refresh="PostList.refresh();"
+      >
+      </ion-refresher>
+
         <ion-list>
-            <ion-item menu-close="" href="#/postDetail">아이오닉 크리에이터 소개 - 홍길동</ion-item>
-            <ion-item menu-close="">글제목 - 글쓴이</ion-item>
-            <ion-item menu-close="">글제목 - 글쓴이</ion-item>
+            <ion-item
+              collection-repeat="post in PostList.Model.posts"
+              ui-sref="postDetail({id: post.id})"
+            >{{post.content}} - post.createdBy.username</ion-item>
         </ion-list>
         <ion-list></ion-list>
         <div class="spacer" style="width: 300px; height: 253px;"></div>
-        <a menu-close="" href="#/addPost" class="button button-positive button-block button-large icon ion-android-add-circle"></a>
+        <a class="button button-positive button-block button-large icon ion-android-add-circle"
+          ui-sref="addPost"
+        ></a>
         <ion-list></ion-list>
+
+        <ion-infinite-scroll
+          on-infinite="PostList.loadMore();"
+          immediate-check="false"
+          ng-if="PostList.Model.more"
+        >
+        </ion-infinite-scroll>
+
     </ion-content>
 </ion-view>

@@ -22,7 +22,7 @@
     })
 
     .state('postDetail', {
-      url: '/postDetail',
+      url: '/postDetail/:id',
       templateUrl: 'state/postDetail/postDetail.html',
       controller: 'PostDetailController as PostDetail'
     })
