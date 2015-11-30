@@ -1,0 +1,18 @@
+<ion-view title="로그인">
+    <ion-content padding="'true'" scroll="false" class="has-header">
+        <form class="list">
+            <img src="img/RHlq1cbmR0SHuv2UaZUN_Ionic-Logo.jpg" width="100%" height="auto" style="width: 100%; height: auto;">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">사용자이름</span>
+                    <input type="text"
+                      ng-model="Login.Model.form.username"
+                    >
+                </label>
+            </ion-list>
+            <a class="button button-positive button-block"
+              ng-click="Login.login();"
+            >로그인</a>
+        </form>
+    </ion-content>
+</ion-view>

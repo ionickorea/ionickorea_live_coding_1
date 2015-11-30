@@ -1,0 +1,35 @@
+<ion-view title="아이오닉 크리에이터">
+    <ion-content padding="'true'" class="has-header">
+        <div class="list card">
+            <div class="item item-divider">글쓴이 : {{PostDetail.Model.post.createdBy.username}}</div>
+            <div class="item item-body">
+                <div>
+                    <p>{{PostDetail.Model.post.content}}</p>
+                  </div>
+                <form class="list"></form>
+                <div class="button-bar"></div>
+            </div>
+            <div class="item item-divider">날짜 : 2015-11-28</div>
+        </div>
+        <ion-list></ion-list>
+        <ion-list>
+            <ion-item class="item-divider">댓글</ion-item>
+            <ion-item
+              collection-repeat="comment in PostDetail.Model.post.comments"
+            >{{comment.content}} by {{comment.creator}}</ion-item>
+        </ion-list>
+        <form class="list"></form>
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">댓글쓰기</span>
+                <textarea placeholder="댓글을 입력해주세요"
+                  ng-model="PostDetail.Model.form.content"
+                > </textarea>
+            </label>
+            <a class="button button-calm button-block  icon-left ion-chatbox-working"
+              ng-click="PostDetail.createComment();"
+            >댓글달기</a>
+        </form>
+        <ion-list></ion-list>
+    </ion-content>
+</ion-view>
